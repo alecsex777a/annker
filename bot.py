@@ -141,7 +141,7 @@ async def binio(message: types.Message):
     BIN = message.text[len('/bin '):]
     if len(BIN) < 6:
         return await message.reply(
-                   'Send bin not ass'
+                   '𝙀𝙨𝙘𝙧𝙞𝙗𝙚 𝙪𝙣 𝙗𝙞𝙣 𝙫á𝙡𝙞𝙙𝙤 𝙬𝙣'
         )
     r = requests.get(
                f'https://bins.ws/search?bins={BIN[:6]}'
@@ -152,7 +152,7 @@ async def binio(message: types.Message):
 {k.text[62:]}
 SENDER: <a href="tg://user?id={ID}">{FIRST}</a>
 BOT⇢ @{BOT_USERNAME}
-OWNER⇢ <a href="tg://user?id={OWNER}">LINK</a>
+OWNER⇢ <a href="tg://user?id={OWNER}">DiegoAkk</a>
 '''
     await message.reply(INFO)
 
@@ -185,23 +185,33 @@ async def genrate(message: types.Message):
             cards = gen(first_6=ccn, mm=mm)
     await asyncio.sleep(3)
     DATA = f'''
-Genrated 1 card of <code>{ccn}</code>
+𝘾𝘾𝙎 𝙂𝙀𝙉𝙀𝙍𝘼𝘿𝘼𝙎 𝘿𝙀: <code>{ccn}</code>
+- - - - - - - - - - - - - - - - 
 <code>{cards}</code>
-BY: <a href="tg://user?id={ID}">{FIRST}</a>
-BOT⇢ @{BOT_USERNAME}
-OWNER⇢ <a href="tg://user?id={OWNER}">LINK</a>
+<code>{cards}</code>
+<code>{cards}</code>
+<code>{cards}</code>
+<code>{cards}</code>
+<code>{cards}</code>
+<code>{cards}</code>
+<code>{cards}</code>
+<code>{cards}</code>
+- - - - - - - - - - - - - - - -
+[🝂] 𝙂𝙚𝙣𝙚𝙧𝙖𝙙𝙖𝙨 𝙥𝙤𝙧: <a href="tg://user?id={ID}">{FIRST}</a>
+[🝂] 𝗕𝗢𝗧⇢ @{BOT_USERNAME}
+[🝂] 𝗢𝗪𝗡𝗘𝗥⇢ <a href="tg://user?id={OWNER}">LINK</a>
 '''
     await message.reply(DATA)
 
 
-@dp.message_handler(commands=['chk'], commands_prefix=PREFIX)
+@dp.message_handler(commands=['stp'], commands_prefix=PREFIX)
 async def ch(message: types.Message):
     await message.answer_chat_action('typing')
     tic = time.perf_counter()
     ID = message.from_user.id
     FIRST = message.from_user.first_name
     try:
-        await dp.throttle('chk', rate=ANTISPAM)
+        await dp.throttle('stp', rate=ANTISPAM)
     except Throttled:
         await message.reply('<b>Too many requests!</b>\n'
                             f'Blocked For {ANTISPAM} seconds')
@@ -209,7 +219,7 @@ async def ch(message: types.Message):
         if message.reply_to_message:
             cc = message.reply_to_message.text
         else:
-            cc = message.text[len('/chk '):]
+            cc = message.text[len('/stp '):]
 
         if len(cc) == 0:
             return await message.reply("<b>No Card to chk</b>")
