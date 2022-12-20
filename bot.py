@@ -98,9 +98,14 @@ async def helpstr(message: types.Message):
     keyboard_markup.row(btns)
     FIRST = message.from_user.first_name
     MSG = f'''
-Hello {FIRST}, Im {BOT_NAME}
-U can find my Boss  <a href="tg://user?id={OWNER}">HERE</a>
-Cmds /chk /info /bin'''
+================================
+𝐇𝐨𝐥𝐚 𝐩𝐚𝐢 {FIRST}, 𝐌𝐢 𝐧𝐨𝐦𝐛𝐫𝐞 𝐞𝐬 {BOT_NAME}
+𝐂𝐡𝐞𝐜𝐤𝐞𝐚 𝐭𝐮𝐬 𝐜𝐜 𝐚 𝐠𝐮𝐬𝐭𝐨, 𝐩𝐚𝐫𝐚 𝐞𝐬𝐨 𝐦𝐞 𝐡𝐢𝐜𝐢𝐞𝐫𝐨𝐧 𝐱𝐃. 𝐌𝐢 𝐎𝐰𝐧𝐞𝐫 𝐞𝐬: <a href="tg://user?id={OWNER}">DiegoAkk</a>
+================================
+𝙔 𝙚𝙨𝙩𝙤𝙨 𝙨𝙤𝙣 𝙢𝙞𝙨 𝙘𝙤𝙢𝙖𝙣𝙙𝙤𝙨:
+- /chk
+- /info 
+- /bin'''
     await message.answer(MSG, reply_markup=keyboard_markup,
                         disable_web_page_preview=True)
 
